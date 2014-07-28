@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.util.AESEncryptor;
+import com.example.util.AESUtil;
 
 public class MainActivity extends Activity {
 
@@ -34,7 +34,9 @@ public class MainActivity extends Activity {
 		String text = des1.getText().toString().trim();
 		String decrypt = null;
 		try {
-			decrypt = AESEncryptor.decrypt("liujigang", text);
+//			decrypt = AESUtil.decrypt("liujigang", text);
+//			decrypt = AESUtils.decode("liujigang", text);
+			decrypt = AESUtil.decode("huianAdroidApp123456789", text);
 		} catch (Exception e) {
 			Toast.makeText(getApplicationContext(), "解密发生异常", Toast.LENGTH_SHORT).show();
 			e.printStackTrace();
@@ -53,7 +55,9 @@ public class MainActivity extends Activity {
 		String encrypt = null;
 		
 		try {
-			encrypt = AESEncryptor.encrypt("liujigang", text);
+//			encrypt = AESUtil.encrypt("liujigang", text);
+//			encrypt = AESUtils.encode("liujigang", text);
+			encrypt = AESUtil.encode("huianAdroidApp123456789", text);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Toast.makeText(getApplicationContext(), "加密出现异常", Toast.LENGTH_SHORT).show();
